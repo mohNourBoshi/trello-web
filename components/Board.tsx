@@ -14,7 +14,7 @@ function Board() {
   // console.log(board);
 
   return (
-    <DragDropContext onDragEnd={hu}>
+    <DragDropContext onDragEnd={}>
       <Droppable droppableId="board" direction="horizontal" type="column">
         {(provided) => (
           <div
