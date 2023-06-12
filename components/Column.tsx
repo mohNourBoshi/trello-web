@@ -36,12 +36,23 @@ function Column({ id, todos, index }: Props) {
                   </span>
                 </h2>
                 <div className="spacey2">
-                  {todo.map((todo, index) => (
+                  {todos.map((todo, index) => (
                     <Draggable
                       key={todo.$id}
                       draggableId={todo.$id}
                       index={index}
-                    ></Draggable>
+                    >
+                      {(provided) => (
+                        <TodoCard
+                          todo
+                          index
+                          id
+                          innerRef={provided.innerRef}
+                          draggableProps={provided.draggableProps}
+                          dragHandleProps={provided.dragHandleProps}
+                        />
+                      )}
+                    </Draggable>
                   ))}
                 </div>
               </div>
