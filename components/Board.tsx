@@ -3,6 +3,7 @@
 import { useBearStore } from "@/store/Boardstore";
 import { useEffect } from "react";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
+import Column from "./Column";
 function Board() {
   const [board, getBoard] = useBearStore((state) => [
     state.board,
