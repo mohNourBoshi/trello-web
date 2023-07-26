@@ -6,7 +6,7 @@ export const getTodosGroupedByColumns = async () => {
     process.env.NEXT_PUBLIC_TODO_COLLECTION_ID!
   );
   const todos = data.documents;
-  // console.log(todos);
+  console.log(todos);
 
   const columns = todos.reduce((accumlater, todo) => {
     if (!accumlater.get(todo.states)) {
