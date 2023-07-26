@@ -4,7 +4,12 @@ import Image from "next/image";
 import { MagnifyingGlassIcon, UserCircleIcon } from "@heroicons/react/24/solid";
 import React from "react";
 import Avatar from "react-avatar";
+import { useBearStore } from "@/store/Boardstore";
 function Hearder() {
+  const [searchString, setSearchString] = useBearStore((state) => [
+    state.searchString,
+    state.setSearchString,
+  ]);
   return (
     <header>
       <div className="flex flex-col md:flex-row  p-5 bg-gray-500/10 items-center ">
@@ -44,6 +49,8 @@ function Hearder() {
             <input
               type="text"
               name="ididid"
+              value={searchString}
+              onChange={(e) => setSearchString(e.target.value)}
               placeholder="Search"
               id="ididid"
               className="flex-1 outline-none p-2"
